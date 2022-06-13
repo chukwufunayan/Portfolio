@@ -17,6 +17,9 @@ function App() {
         desktop: 1280,
       },
     },
+    palette: {
+      mode: 'dark',
+    },
     mode: themeMode,
   });
   return (
