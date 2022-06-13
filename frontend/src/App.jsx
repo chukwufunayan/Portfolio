@@ -1,27 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import './App.css';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Navbar from './components/navbar/navbar';
 
 function App() {
+  const [themeMode, setThemeMode] = useState('dark');
+  const theme = createTheme({
+    breakpoints: {
+      values: {
+        mobile: 0,
+        phone: 320,
+        tablet: 640,
+        laptop: 1024,
+        desktop: 1280,
+      },
+    },
+    mode: themeMode,
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          <code>src/App.js</code>
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Box sx={{ maxWidth: '1024px', margin: 'auto' }}>
+        <Navbar setTheme={setThemeMode} />
+        <Outlet />
+      </Box>
+    </ThemeProvider>
   );
 }
 
