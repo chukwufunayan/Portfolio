@@ -16,7 +16,10 @@ function themebutton({ themeMode, setTheme }) {
       >
         <Button
           sx={{
-            backgroundColor: themeMode === 'dark' ? '#FBD38D' : '#6B46C1',
+            backgroundColor: (theme) =>
+              themeMode === 'dark'
+                ? theme.palette.warning.light
+                : theme.palette.secondary.light,
             padding: '.75rem .45rem',
           }}
           onClick={() => setTheme(themeMode === 'light' ? 'dark' : 'light')}

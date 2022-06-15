@@ -32,8 +32,8 @@ function navbar({ themeMode, setTheme }) {
 
   return (
     <Box
+      backgroundColor={({ palette: { primary } }) => primary.main}
       sx={{
-        backgroundColor: '#20202380',
         padding: '.4rem .5rem',
         display: 'flex',
         justifyContent: 'space-between',
@@ -41,11 +41,17 @@ function navbar({ themeMode, setTheme }) {
         position: 'fixed',
         width: '100%',
         maxWidth: '1024px',
+        zIndex: 9999,
       }}
       ref={navbarRef}
     >
       <motion.div whileHover="hoverStart" variants={logoVariantParent}>
-        <Stack direction="row" spacing={1} alignItems="center">
+        <Stack
+          direction="row"
+          spacing={1}
+          alignItems="center"
+          sx={{ cursor: 'pointer' }}
+        >
           <motion.div variants={logoVariantChild}>
             <img
               alt="naija flag logo"

@@ -7,6 +7,7 @@ const PopupLinks = styled('p')({
   margin: '0rem',
   padding: '.5rem',
   textUnderlineOffset: '.2rem',
+  cursor: 'pointer',
   ':hover': {
     color: 'white',
     textDecoration: 'underline',
