@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import AppBar from '@mui/material/AppBar';
 
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -31,19 +32,21 @@ function navbar({ themeMode, setTheme }) {
   const open = Boolean(anchorEl);
 
   return (
-    <Box
-      backgroundColor={({ palette: { primary } }) => primary.main}
+    <AppBar
+      color="primary"
+      position="fixed"
       sx={{
         padding: '.4rem .5rem',
         display: 'flex',
+        flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        position: 'fixed',
         width: '100%',
         maxWidth: '1024px',
         zIndex: 9999,
       }}
       ref={navbarRef}
+      enableColorOnDark
     >
       <motion.div whileHover="hoverStart" variants={logoVariantParent}>
         <Stack
@@ -109,7 +112,7 @@ function navbar({ themeMode, setTheme }) {
       >
         <Navbarlinks />
       </Popover>
-    </Box>
+    </AppBar>
   );
 }
 
