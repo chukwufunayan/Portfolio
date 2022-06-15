@@ -2,18 +2,22 @@ import React, { useState, useRef } from 'react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import LightModeIcon from '@mui/icons-material/LightMode';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
+
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import Popover from '@mui/material/Popover';
 
+import { motion } from 'framer-motion';
+
 import logo from '../../icons/Flag-map_of_Nigeria.svg.png';
-import NavbarPopupBox from '../navbarpopupbox/navbarpopupbox';
+import Themebutton from '../themebutton/themebutton';
+import Navbarlinks from '../navbarlinks/navbarlinks';
 
 const id = 'menu-popover';
+const logoVariantChild = { hoverStart: { rotate: 15 } };
+const logoVariantParent = { hoverStart: { rotate: 0 } };
 
-function navbar() {
+function navbar({ themeMode, setTheme }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const navbarRef = useRef();
   const handleClick = () => {
@@ -33,43 +37,31 @@ function navbar() {
         padding: '.4rem .5rem',
         display: 'flex',
         justifyContent: 'space-between',
+        alignItems: 'center',
         position: 'fixed',
         width: '100%',
         maxWidth: '1024px',
       }}
       ref={navbarRef}
     >
-      <Stack direction="row" spacing={1} alignItems="center">
-        <img
-          alt="naija flag logo"
-          src={logo}
-          style={{ width: '40px', height: '30px' }}
-        />
-        <p>Funayan Oji</p>
-      </Stack>
+      <motion.div whileHover="hoverStart" variants={logoVariantParent}>
+        <Stack direction="row" spacing={1} alignItems="center">
+          <motion.div variants={logoVariantChild}>
+            <img
+              alt="naija flag logo"
+              src={logo}
+              style={{ width: '40px', height: '30px' }}
+            />
+          </motion.div>
+
+          <p>Funayan Oji</p>
+        </Stack>
+      </motion.div>
+      <Box display={{ mobile: 'none', tablet: 'flex' }}>
+        <Navbarlinks />
+      </Box>
       <Stack direction={{ mobile: 'column', phone: 'row' }} spacing={1}>
-        <Button
-          sx={{
-            backgroundColor: '#FBD38D',
-            padding: '.75rem .45rem',
-            display: (theme) => (theme.mode === 'dark' ? '' : 'none'),
-          }}
-        >
-          <LightModeIcon sx={{ color: '#1A202C' }} />
-        </Button>
-        <Button
-          sx={{
-            backgroundColor: '#6B46C1',
-            padding: '.75rem .45rem',
-            display: (theme) => (theme.mode === 'light' ? '' : 'none'),
-          }}
-        >
-          <DarkModeIcon
-            sx={{
-              color: '#E2E8F0',
-            }}
-          />
-        </Button>
+        <Themebutton themeMode={themeMode} setTheme={setTheme} />
         <Button
           sx={{
             backgroundColor: '#f7f3f321',
@@ -109,7 +101,7 @@ function navbar() {
           horizontal: 'right',
         }}
       >
-        <NavbarPopupBox />
+        <Navbarlinks />
       </Popover>
     </Box>
   );

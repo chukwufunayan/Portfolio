@@ -18,14 +18,13 @@ function App() {
       },
     },
     palette: {
-      mode: 'dark',
+      mode: themeMode,
     },
-    mode: themeMode,
   });
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ maxWidth: '1024px', margin: 'auto' }}>
-        <Navbar setTheme={setThemeMode} />
+        <Navbar themeMode={themeMode} setTheme={setThemeMode} />
         <Outlet />
       </Box>
     </ThemeProvider>
