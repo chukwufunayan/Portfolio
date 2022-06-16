@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
+import Typography from '@mui/material/Typography';
 
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -43,7 +44,6 @@ function navbar({ themeMode, setTheme }) {
         alignItems: 'center',
         width: '100%',
         maxWidth: '1024px',
-        zIndex: 9999,
       }}
       ref={navbarRef}
       enableColorOnDark
