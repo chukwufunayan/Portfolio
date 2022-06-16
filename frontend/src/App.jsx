@@ -23,20 +23,21 @@ function App() {
         ? {
             primary: {
               main: '#00ba34',
+              contrastText: '#E2E8F0',
             },
             secondary: {
               main: '#e92c2c',
             },
-            background: { default: 'black' },
+            background: { default: '#f0e7db' },
           }
         : {
             primary: {
               main: '#33C75C',
+              contrastText: '#E2E8F0',
             },
             secondary: {
               main: '#ED5656',
             },
-            background: { default: 'black' },
           }),
     },
   });
