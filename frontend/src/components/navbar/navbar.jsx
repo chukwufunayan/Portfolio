@@ -13,7 +13,7 @@ import { motion } from 'framer-motion';
 import logo from '../../icons/Flag-map_of_Nigeria.svg.png';
 import Themebutton from '../themebutton/themebutton';
 import Navbarlinks from '../navbarlinks/navbarlinks';
-import { cssText, cssBorders, colors } from '../../cssConstants';
+import { cssText, cssBorders, colors, cssButton } from '../../cssConstants';
 
 const id = 'menu-popover';
 const logoVariantChild = { hoverStart: { rotate: 360 } };
@@ -75,7 +75,7 @@ function navbar({ themeMode, setTheme }) {
           sx={{
             backgroundColor: '#f7f3f321',
             border: cssBorders.borderWhite1,
-            padding: '.75rem .45rem',
+            padding: cssButton.padding,
             display: { tablet: 'none' },
           }}
           aria-describedby={id}

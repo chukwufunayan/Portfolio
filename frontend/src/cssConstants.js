@@ -6,6 +6,13 @@ export const cssPadding = {
   padding3xl: '3rem',
   themeButtonPadding: '.75rem .45rem',
 };
+export const cssSpacing = {
+  spacingHalfxl: '.5rem',
+  spacing1xl: '1rem',
+  spacing1Halfxl: '1.5rem',
+  spacing2xl: '2rem',
+  spacing3xl: '3rem',
+};
 export const cssText = {
   fontFamilyPrimary: "'Fredoka One', cursive",
   fontFamilySecondary: "'Raleway', sans-serif",
@@ -26,3 +33,5 @@ export const cssMargins = {
 export const cssBorders = { borderWhite1: '#E2E8F0 solid 1px' };
 
 export const colors = { commonWhite: '#E2E8F0', transparent: 'transparent' };
+
+export const cssButton = { padding: '.75rem .45rem' };

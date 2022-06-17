@@ -3,7 +3,7 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import Button from '@mui/material/Button';
 import { motion, AnimatePresence } from 'framer-motion';
-import { colors } from '../../cssConstants';
+import { colors, cssButton } from '../../cssConstants';
 
 function themebutton({ themeMode, setTheme }) {
   return (
@@ -21,7 +21,7 @@ function themebutton({ themeMode, setTheme }) {
               themeMode === 'dark'
                 ? palette.warning.light
                 : palette.secondary.light,
-            padding: '.75rem .45rem',
+            padding: cssButton.padding,
           }}
           onClick={() => setTheme(themeMode === 'light' ? 'dark' : 'light')}
         >
