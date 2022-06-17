@@ -17,6 +17,8 @@ export const cssText = {
   fontFamilyPrimary: "'Fredoka One', cursive",
   fontFamilySecondary: "'Raleway', sans-serif",
   lineHeightBase: '1.5rem',
+  lineHeightTop: '1.7rem',
+
   fontSize1xl: '',
   fontSize2xl: '',
   letterSpacing: '.15rem',

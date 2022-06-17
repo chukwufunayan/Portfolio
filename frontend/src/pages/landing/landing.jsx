@@ -123,7 +123,15 @@ function landingpage() {
               }}
             >
               <BioDateHeaders sx={{ textAlign: 'center' }}>
-                Download Resume <FileDownloadIcon />
+                <span
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    columnGap: '.5rem ',
+                  }}
+                >
+                  Download Resume <FileDownloadIcon />
+                </span>
               </BioDateHeaders>
             </AccentButtons>
           </Stack>
@@ -134,7 +142,7 @@ function landingpage() {
                 <BioDateHeaders>1998</BioDateHeaders>
               </Grid>
               <Grid item mobile={8}>
-                <AboutParagraphs>Born In Lagos,Nigeria</AboutParagraphs>
+                <AboutParagraphs>Born In Lagos, Nigeria</AboutParagraphs>
               </Grid>
               <Grid item mobile={4}>
                 <BioDateHeaders>2020</BioDateHeaders>
