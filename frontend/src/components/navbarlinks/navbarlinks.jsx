@@ -2,8 +2,10 @@ import { React } from 'react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
+import { cssText } from '../../cssConstants';
 
-const PopupLinks = styled('p')({
+const PopupLinks = styled('a')({
+  fontFamily: cssText.fontFamilySecondary,
   margin: '0rem',
   padding: '.5rem',
   textUnderlineOffset: '.2rem',

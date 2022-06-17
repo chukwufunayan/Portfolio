@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
-import Typography from '@mui/material/Typography';
 
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -14,9 +13,10 @@ import { motion } from 'framer-motion';
 import logo from '../../icons/Flag-map_of_Nigeria.svg.png';
 import Themebutton from '../themebutton/themebutton';
 import Navbarlinks from '../navbarlinks/navbarlinks';
+import { cssText, cssBorders, colors } from '../../cssConstants';
 
 const id = 'menu-popover';
-const logoVariantChild = { hoverStart: { rotate: 15 } };
+const logoVariantChild = { hoverStart: { rotate: 360 } };
 const logoVariantParent = { hoverStart: { rotate: 0 } };
 
 function navbar({ themeMode, setTheme }) {
@@ -35,7 +35,7 @@ function navbar({ themeMode, setTheme }) {
   return (
     <AppBar
       color="primary"
-      position="fixed"
+      position="sticky"
       sx={{
         padding: '.4rem .5rem',
         display: 'flex',
@@ -63,7 +63,7 @@ function navbar({ themeMode, setTheme }) {
             />
           </motion.div>
 
-          <p>Funayan Oji</p>
+          <p style={{ fontFamily: cssText.fontFamilyPrimary }}>Funayan Oji</p>
         </Stack>
       </motion.div>
       <Box display={{ mobile: 'none', tablet: 'flex' }}>
@@ -74,7 +74,7 @@ function navbar({ themeMode, setTheme }) {
         <Button
           sx={{
             backgroundColor: '#f7f3f321',
-            border: 'white solid 1px',
+            border: cssBorders.borderWhite1,
             padding: '.75rem .45rem',
             display: { tablet: 'none' },
           }}
@@ -84,13 +84,13 @@ function navbar({ themeMode, setTheme }) {
           {open ? (
             <CloseIcon
               sx={{
-                color: '#E2E8F0',
+                color: colors.commonWhite,
               }}
             />
           ) : (
             <MenuIcon
               sx={{
-                color: '#E2E8F0',
+                color: colors.commonWhite,
               }}
             />
           )}

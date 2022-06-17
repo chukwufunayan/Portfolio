@@ -28,7 +28,9 @@ function App() {
             secondary: {
               main: '#e92c2c',
             },
-            background: { default: '#f0e7db' },
+            background: {
+              default: '#f0e7db',
+            },
           }
         : {
             primary: {
@@ -40,6 +42,22 @@ function App() {
             },
           }),
     },
+    components: {
+      MuiPaper: {
+        variants: [
+          {
+            props: { variant: theme },
+            style: {
+              backgroundColor: 'rgb(225,225,225,.5)',
+              backdropFilter: 'saturate(200%) blur(30px)',
+              boxShadow: 'rgb(0 0 0 / 5%) 0rem 1.25rem 1.6875rem 0rem',
+              position: 'relative',
+              top: '-18px',
+            },
+          },
+        ],
+      },
+    },
   });
   const theme = useMemo(
     () => createTheme(getThemeDesign(themeMode)),
@@ -49,7 +67,6 @@ function App() {
     <ThemeProvider theme={theme}>
       <Box sx={{ maxWidth: '1024px', margin: 'auto' }}>
         <Navbar themeMode={themeMode} setTheme={setThemeMode} />
-        <Box height="4.05rem" />
         <Outlet />
       </Box>
     </ThemeProvider>
