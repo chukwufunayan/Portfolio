@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import Button from '@mui/material/Button';
@@ -7,10 +7,16 @@ import { styled } from '@mui/material/styles';
 import { colors, cssButton } from '../../cssConstants';
 
 function themebutton({ themeMode, setTheme }) {
-  const ThemeButton = styled(Button)(
-    ({ theme: { palette } }) => `background-color:${palette.themeButton.main};
+  const ThemeButton = useMemo(
+    () =>
+      styled(Button)(
+        ({
+          theme: { palette },
+        }) => `background-color:${palette.themeButton.main};
       padding:${cssButton.padding};
       :hover{background-color:${palette.themeButton.secondary}`
+      ),
+    [themeMode]
   );
 
   return (
