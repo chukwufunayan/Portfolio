@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import Navbar from './components/navbar/navbar';
 
 function App() {
-  const [themeMode, setThemeMode] = useState('dark');
+  const [themeMode, setThemeMode] = useState('light');
   const getThemeDesign = (theme) => ({
     breakpoints: {
       values: {
@@ -31,6 +31,10 @@ function App() {
             background: {
               default: '#f0e7db',
             },
+            themeButton: {
+              main: '#8730C9',
+              secondary: 'rgb(94,33,140)',
+            },
           }
         : {
             primary: {
@@ -39,6 +43,10 @@ function App() {
             },
             secondary: {
               main: '#ED5656',
+            },
+            themeButton: {
+              main: '#ffd33d',
+              secondary: 'rgb(178,147,42)',
             },
           }),
     },
