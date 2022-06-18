@@ -16,7 +16,7 @@ export const cssSpacing = {
 export const cssText = {
   fontFamilyPrimary: "'Fredoka One', cursive",
   fontFamilySecondary: "'Raleway', sans-serif",
-  lineHeightBase: '1.5rem',
+  lineHeightBase: '1.7rem',
   lineHeightTop: '1.7rem',
 
   fontSize1xl: '',
