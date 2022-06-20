@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
 import CardMedia from '@mui/material/CardMedia';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import * as THREE from 'three';
 import Paper from '@mui/material/Paper';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -11,6 +13,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import {
   cssPadding,
   cssText,
@@ -56,12 +59,57 @@ const AccentButtons = styled(Button)(
 );
 
 function landingpage() {
+  const ref = useRef();
+  const [_render, setRender] = useState();
+  const [_camera, setCamera] = useState();
+  const [_scene, setScene] = useState();
+
+  useEffect(() => {
+    console.log('ref: ', ref);
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(
+      35,
+      ref.current.clientWidth / ref.current.clientHeight,
+      0.1,
+      1000
+    );
+
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(ref.current.clientWidth, ref.current.clientHeight);
+    ref.current.appendChild(renderer.domElement);
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.addEventListener('change', renderer);
+    controls.autoRotate = false;
+    const geometry = new THREE.BoxGeometry(1, 1, 1);
+    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+    const cube = new THREE.Mesh(geometry, material);
+    scene.add(cube);
+
+    function animate() {
+      requestAnimationFrame(animate);
+      cube.rotation.x += 0.01;
+      cube.rotation.y += 0.01;
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+    camera.position.z = 5;
+    return () => {
+      geometry.dispose();
+      material.dispose();
+      renderer.dispose();
+      console.log('unmounting');
+    };
+  }, []);
   const {
     palette: { mode },
   } = useTheme();
+
   return (
     <Box>
-      <CardMedia component="img" image={blackEngineer} />
+      <div ref={ref} style={{ height: '400px', width: '100%' }} />
+      {/* <CardMedia component="img" image={blackEngineer} /> */}
       <Paper
         variant={mode}
         sx={{
