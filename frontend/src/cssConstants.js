@@ -19,8 +19,9 @@ export const cssText = {
   lineHeightBase: '1.7rem',
   lineHeightTop: '1.7rem',
 
-  fontSize1xl: '',
-  fontSize2xl: '',
+  fontSize1xl: '1rem',
+  fontSize2xl: '2rem',
+  fontSize2Halfxl: '2.5rem',
   letterSpacing: '.15rem',
   wordspacing: '10px',
   textUnderlineOffset: '.2rem',

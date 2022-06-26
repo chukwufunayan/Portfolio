@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 import App from './App';
 import Landing from './pages/landing/landing';
+import Experience from './pages/experience/experience';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,6 +14,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="/" element={<Landing />} />
+          <Route path="experience" element={<Experience />} />
         </Route>
       </Routes>
     </BrowserRouter>

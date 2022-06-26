@@ -3,7 +3,9 @@ import { Outlet } from 'react-router-dom';
 import './App.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
+import CardMedia from '@mui/material/CardMedia';
 import Navbar from './components/navbar/navbar';
+import blackEngineer from './icons/blackEngineer.jpeg';
 
 function App() {
   const [themeMode, setThemeMode] = useState('light');
@@ -54,13 +56,13 @@ function App() {
       MuiPaper: {
         variants: [
           {
-            props: { variant: theme },
+            props: { variant: 'glass' },
             style: {
               backgroundColor: 'rgb(225,225,225,.5)',
               backdropFilter: 'saturate(200%) blur(30px)',
               boxShadow: 'rgb(0 0 0 / 5%) 0rem 1.25rem 1.6875rem 0rem',
               position: 'relative',
-              top: '-18px',
+              top: '-26px',
             },
           },
         ],
@@ -75,6 +77,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Box sx={{ maxWidth: '1024px', margin: 'auto' }}>
         <Navbar themeMode={themeMode} setTheme={setThemeMode} />
+        <CardMedia component="img" image={blackEngineer} />
         <Outlet />
       </Box>
     </ThemeProvider>
