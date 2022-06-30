@@ -3,9 +3,8 @@ import { Outlet } from 'react-router-dom';
 import './App.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import CardMedia from '@mui/material/CardMedia';
 import Navbar from './components/navbar/navbar';
-import blackEngineer from './icons/blackEngineer.jpeg';
+import Voxelreplica from './components/voxelreplica/voxelreplica';
 
 function App() {
   const [themeMode, setThemeMode] = useState('light');
@@ -77,7 +76,8 @@ function App() {
     <ThemeProvider theme={theme}>
       <Box sx={{ maxWidth: '1024px', margin: 'auto' }}>
         <Navbar themeMode={themeMode} setTheme={setThemeMode} />
-        <CardMedia component="img" image={blackEngineer} />
+        <Voxelreplica />
+        {/* <CardMedia component="img" image={blackEngineer} /> */}
         <Outlet />
       </Box>
     </ThemeProvider>
