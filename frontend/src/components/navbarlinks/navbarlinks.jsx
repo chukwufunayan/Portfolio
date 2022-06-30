@@ -1,4 +1,5 @@
 import { React } from 'react';
+import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
@@ -24,10 +25,18 @@ function navbarlinks() {
         sx={{ padding: '.45rem .25rem' }}
         spacing={{ tablet: 2 }}
       >
-        <PopupLinks>About</PopupLinks>
-        <PopupLinks>Works</PopupLinks>
-        <PopupLinks>Post</PopupLinks>
-        <PopupLinks>View Source</PopupLinks>
+        <Link style={{ textDecoration: 'none' }} to="/">
+          <PopupLinks>About</PopupLinks>
+        </Link>
+        <Link style={{ textDecoration: 'none' }} to="experience">
+          <PopupLinks>Experience</PopupLinks>
+        </Link>
+        <Link style={{ textDecoration: 'none' }} to="/">
+          <PopupLinks>Posts</PopupLinks>{' '}
+        </Link>
+        <Link style={{ textDecoration: 'none' }} to="/">
+          <PopupLinks>View Source</PopupLinks>{' '}
+        </Link>
       </Stack>
     </Box>
   );
