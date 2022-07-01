@@ -27,15 +27,28 @@ function voxelreplica() {
     scene.add(ambientLight, pointLight, pointLightHelper);
 
     // camera
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      ref.current.clientWidth / ref.current.clientHeight,
-      0.1,
+    // const camera = new THREE.PerspectiveCamera(
+    //   75,
+    //   ref.current.clientWidth / ref.current.clientHeight,
+    //   0.1,
+    //   1000
+    // );
+    //
+    // camera.position.z = 22.389933119740018;
+    // camera.position.y = 11.61866237153789;
+    // camera.position.x = -5.410301035552537;
+    const aspect = ref.current.clientWidth / ref.current.clientHeight;
+    const d = 16;
+    const camera = new THREE.OrthographicCamera(
+      -d * aspect,
+      d * aspect,
+      d,
+      -d,
+      1,
       1000
     );
-    camera.position.z = 16.45;
-    camera.position.y = 13.8;
-    camera.position.x = -11;
+    camera.position.set(-10.26, 13.2, 6.3); // all components equal
+    camera.lookAt(scene.position); // or the origin
 
     // renderer
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -100,7 +113,7 @@ function voxelreplica() {
     <Box
       className="voxelContainer"
       ref={ref}
-      sx={{ width: '100%', height: { mobile: '400px', tablet: '500px' } }}
+      sx={{ width: '100%', height: { mobile: '320px', tablet: '500px' } }}
     />
   );
 }
