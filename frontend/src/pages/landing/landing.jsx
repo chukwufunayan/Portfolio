@@ -4,6 +4,7 @@ import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 import { styled, useTheme } from '@mui/material/styles';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -45,6 +46,19 @@ const AboutParagraphs = styled('p')({
   margin: cssMargins.marginNone,
   lineHeight: cssText.lineHeightBase,
 });
+const AboutParagSecondary = styled('a')(
+  ({
+    theme: {
+      palette: { secondary },
+    },
+  }) => `
+    font-family: ${cssText.fontFamilySecondary};
+    margin:${cssMargins.marginNone};
+    line-height:${cssText.lineHeightBase};
+    color:${secondary.main};
+    display: inline-block;
+    `
+);
 const AccentButtons = styled(Button)(
   ({ theme }) => `
   padding: ${cssButton.padding};
@@ -154,8 +168,18 @@ function landingpage() {
           <AboutSubHeaders>Interests</AboutSubHeaders>
           <AboutParagraphs>
             I'm a very adventurous individual who also likes challenging
-            himself. When i'm not coding, I enjoy cycling, listening to music,
-            cooking, and watching sports.Celtics
+            himself. When i'm not coding, I enjoy{' '}
+            <AboutParagSecondary href="https://strava.com/" target="_blank">
+              cycling
+            </AboutParagSecondary>
+            ,{' '}
+            <AboutParagSecondary
+              href="https://music.apple.com/"
+              target="_blank"
+            >
+              listening to music
+            </AboutParagSecondary>
+            , cooking, and watching sports.
           </AboutParagraphs>
         </Box>
         <Box>
