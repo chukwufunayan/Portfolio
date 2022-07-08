@@ -1,12 +1,21 @@
 import React from 'react';
-import { styled } from '@mui/material/styles';
+// Mui
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import { CardMedia } from '@mui/material';
-
 import GlassPaper from '../../components/glasspaper/glasspaper';
 import Card from '../../components/card/card';
-import { colors, cssMargins, cssText } from '../../cssConstants';
+// Css Constants
+import { colors, cssMargins } from '../../cssConstants';
+// Styled Elements
+import {
+  TitleHeaders,
+  NumHeaders,
+  DescSecondaryColorInline,
+  AboutSubHeaders,
+  ExperienceDesc,
+  AboutParagraphs,
+  CardMediaIcon,
+} from './styledComponents';
 // images
 import {
   CPlus,
@@ -22,75 +31,6 @@ import {
   Naturalproduct,
 } from '../../util/photoExport';
 
-const TitleHeaders = styled('h1')({
-  fontFamily: cssText.fontFamilyPrimary,
-  letterSpacing: cssText.letterSpacing,
-  marginTop: cssMargins.marginNone,
-  marginBottom: cssMargins.marginHalf,
-  textAlign: 'center',
-});
-const AboutHeaders = styled('h2')({
-  fontFamily: cssText.fontFamilyPrimary,
-  letterSpacing: cssText.letterSpacing,
-  marginTop: cssMargins.marginNone,
-  marginBottom: cssMargins.marginHalf,
-});
-const NumHeaders = styled('h1')(
-  ({
-    theme: {
-      palette: { primary },
-    },
-  }) => `
-  color: ${primary.main};
-  font-size: ${cssText.fontSize2Halfxl};
-  font-family: ${cssText.fontFamilyPrimary};
-  letter-spacing: ${cssText.letterSpacing};
-  margin-top: ${cssMargins.marginNone};
-  margin-bottom: ${cssMargins.marginHalf};`
-);
-const DescSecondaryColorInline = styled('h4')(
-  ({ theme }) => `color:${theme.palette.secondary.main};
-  display: inline-block;
-  font-family: ${cssText.fontFamilyPrimary};
-  letter-spacing: ${cssText.letterSpacing};
-  margin-top: ${cssMargins.marginNone};
-  margin-bottom: ${cssMargins.marginHalf};`
-);
-const DescSecondaryColorBlock = styled('h4')(
-  ({ theme }) => `color:${theme.palette.secondary.main};
-  font-family: ${cssText.fontFamilyPrimary};
-  letter-spacing: ${cssText.letterSpacing};
-  margin-top: ${cssMargins.marginNone};
-  margin-bottom: ${cssMargins.marginHalf};`
-);
-const AboutSubHeaders = styled('h2')({
-  fontFamily: cssText.fontFamilyPrimary,
-  letterSpacing: cssText.letterSpacing,
-  marginTop: cssMargins.margin1Halfxl,
-  marginBottom: cssMargins.margin1xl,
-  textDecoration: 'underline',
-});
-const ExperienceDesc = styled('h4')({
-  fontFamily: cssText.fontFamilyPrimary,
-  display: 'inline-block',
-  letterSpacing: cssText.letterSpacing,
-  marginTop: cssMargins.marginNone,
-  marginBottom: cssMargins.marginHalf,
-});
-
-const AboutParagraphs = styled('p')({
-  fontFamily: cssText.fontFamilySecondary,
-  margin: cssMargins.marginNone,
-  lineHeight: cssText.lineHeightBase,
-});
-const CardMediaIcon = styled(CardMedia)(
-  () => `
-  height: 80px;
-  background-size: contain;
-  background-position: left;
-  margin-bottom:${cssMargins.marginHalf};
-`
-);
 function experience() {
   console.log('icons', module);
   return (

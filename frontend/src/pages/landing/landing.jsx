@@ -1,76 +1,32 @@
 import React from 'react';
+// Mui
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom';
-import { styled, useTheme } from '@mui/material/styles';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
-import {
-  cssText,
-  cssMargins,
-  colors,
-  cssBorders,
-  cssButton,
-  cssSpacing,
-} from '../../cssConstants';
+import { cssMargins, colors, cssBorders, cssSpacing } from '../../cssConstants';
+import saveFile from '../../util/fileDownloader';
 import GlassPaper from '../../components/glasspaper/glasspaper';
+// Styled Elements
+import {
+  AboutHeaders,
+  AboutSubHeaders,
+  BioDateHeaders,
+  ButtonHeader,
+  AboutParagraphs,
+  AboutParagSecondary,
+  AccentButtons,
+} from './styledElements';
 // images
 import avatarHeadshot from '../../icons/blackmanheadshot.jpeg';
 
-const AboutHeaders = styled('h1')({
-  fontFamily: cssText.fontFamilyPrimary,
-  letterSpacing: cssText.letterSpacing,
-  marginTop: cssMargins.marginNone,
-  marginBottom: cssMargins.marginHalf,
-});
-const AboutSubHeaders = styled('h2')({
-  fontFamily: cssText.fontFamilyPrimary,
-  letterSpacing: cssText.letterSpacing,
-  marginTop: cssMargins.margin1Halfxl,
-  marginBottom: cssMargins.margin1xl,
-  textDecoration: 'underline',
-});
-const BioDateHeaders = styled('h5')({
-  fontFamily: cssText.fontFamilyPrimary,
-  letterSpacing: cssText.letterSpacing,
-  marginTop: cssMargins.marginNone,
-  marginBottom: cssMargins.marginNone,
-});
-const AboutParagraphs = styled('p')({
-  fontFamily: cssText.fontFamilySecondary,
-  margin: cssMargins.marginNone,
-  lineHeight: cssText.lineHeightBase,
-});
-const AboutParagSecondary = styled('a')(
-  ({
-    theme: {
-      palette: { secondary },
-    },
-  }) => `
-    font-family: ${cssText.fontFamilySecondary};
-    margin:${cssMargins.marginNone};
-    line-height:${cssText.lineHeightBase};
-    color:${secondary.main};
-    display: inline-block;
-    `
-);
-const AccentButtons = styled(Button)(
-  ({ theme }) => `
-  padding: ${cssButton.padding};
-  border: ${theme.palette.primary.main} solid 1px;
-`
-);
+const { dwnldFile } = saveFile();
 
 function landingpage() {
-  const {
-    palette: { mode },
-  } = useTheme();
-
   return (
     <Box>
       <GlassPaper>
@@ -122,7 +78,10 @@ function landingpage() {
               marginBottom: cssMargins.margin1xl,
             }}
           >
-            <BioDateHeaders sx={{ textAlign: 'center' }}>
+            <ButtonHeader
+              sx={{ textAlign: 'center' }}
+              onClick={() => dwnldFile()}
+            >
               <span
                 style={{
                   display: 'flex',
@@ -132,7 +91,7 @@ function landingpage() {
               >
                 Download Resume <FileDownloadIcon />
               </span>
-            </BioDateHeaders>
+            </ButtonHeader>
           </AccentButtons>
         </Stack>
         <Box>
@@ -169,12 +128,15 @@ function landingpage() {
           <AboutParagraphs>
             I'm a very adventurous individual who also likes challenging
             himself. When i'm not coding, I enjoy{' '}
-            <AboutParagSecondary href="https://strava.com/" target="_blank">
+            <AboutParagSecondary
+              href="https://www.strava.com/athletes/fojiagbaje "
+              target="_blank"
+            >
               cycling
             </AboutParagSecondary>
             ,{' '}
             <AboutParagSecondary
-              href="https://music.apple.com/"
+              href="https://music.apple.com/us/playlist/naija/pl.u-06oxDj6tkXBxzb"
               target="_blank"
             >
               listening to music

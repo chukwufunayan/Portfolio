@@ -1,29 +1,20 @@
 import React from 'react';
+// Mui
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import { cssMargins, cssPadding, cssText } from '../../cssConstants';
+// Css Constants
+import { cssPadding } from '../../cssConstants';
+// Styled Elements
+import {
+  AboutHeaders,
+  AboutParagraphs,
+  CardMediaAction,
+} from './styledElements';
 
-const AboutHeaders = styled('h2')({
-  fontFamily: cssText.fontFamilyPrimary,
-  letterSpacing: cssText.letterSpacing,
-  marginTop: cssMargins.marginNone,
-  marginBottom: cssMargins.marginHalf,
-});
-const AboutParagraphs = styled('p')({
-  fontFamily: cssText.fontFamilySecondary,
-  margin: cssMargins.marginNone,
-  lineHeight: cssText.lineHeight1xl,
-});
-const CardMediaAction = styled(CardMedia)(
-  () => `
-    object-fit: fill;`
-);
 function card({ img, title, desc }) {
   return (
-    <Card sx={{ maxWidth: '350px', backgroundColor: 'themeColor' }}>
+    <Card sx={{ maxWidth: '330px' }}>
       <CardActionArea>
         <CardMediaAction component="img" image={img} height="170" />
         <CardContent sx={{ padding: cssPadding.padding1xl }}>

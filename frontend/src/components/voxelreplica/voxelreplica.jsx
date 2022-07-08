@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Box from '@mui/material/Box';
+// Three JS Dependencies
 // eslint-disable-next-line import/no-extraneous-dependencies
 import * as THREE from 'three';
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -13,11 +14,11 @@ import voxelReplica from './withoutclothingrack.glb';
 function voxelreplica() {
   const ref = useRef();
   useEffect(() => {
-    // scene
+    // Scene
     const scene = new THREE.Scene();
     scene.add(new THREE.AxesHelper(100));
 
-    // light
+    // Light
     const pointLight = new THREE.PointLight(0xcccccc);
     pointLight.position.set(-3, 25, 7);
     const pointLightHelper = new THREE.PointLightHelper(pointLight);
@@ -25,7 +26,6 @@ function voxelreplica() {
     pointLight.shadow.bias = -0.001;
     const ambientLight = new THREE.AmbientLight(0xcccccc, 0.95);
     scene.add(ambientLight, pointLight, pointLightHelper);
-
     // camera
     // const camera = new THREE.PerspectiveCamera(
     //   75,
@@ -50,7 +50,7 @@ function voxelreplica() {
     camera.position.set(-10.26, 13.2, 6.3); // all components equal
     camera.lookAt(scene.position); // or the origin
 
-    // renderer
+    // Renderer
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setPixelRatio(ref.current.devicePixelRatio);
     renderer.setSize(ref.current.clientWidth, ref.current.clientHeight);
@@ -59,11 +59,11 @@ function voxelreplica() {
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     ref.current.appendChild(renderer.domElement);
 
-    // controls
+    // Controls
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
 
-    // loader
+    // Loader
     const loader = new GLTFLoader();
     loader.load(
       voxelReplica,
@@ -87,11 +87,11 @@ function voxelreplica() {
     const stats = Stats();
     ref.current.appendChild(stats.dom);
     function render() {
-      console.log('3js rendered:', camera.position);
+      // console.log('3js rendered:', camera.position);
       renderer.render(scene, camera);
     }
 
-    window.addEventListener('resize', onWindowResize, false);
+    // Window Resize Callback
     function onWindowResize() {
       console.log('window callback');
       camera.aspect = ref.current.clientWidth / ref.current.clientHeight;
@@ -99,7 +99,9 @@ function voxelreplica() {
       renderer.setSize(ref.current.clientWidth, ref.current.clientHeight);
       render();
     }
+    window.addEventListener('resize', onWindowResize, false);
 
+    // Animate Func
     function animate() {
       requestAnimationFrame(animate);
       controls.update();

@@ -1,19 +1,21 @@
 import React, { useState, useRef } from 'react';
+// Mui
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
-
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import Popover from '@mui/material/Popover';
-
+// Motion Frame
 import { motion } from 'framer-motion';
-
-import logo from '../../icons/Flag-map_of_Nigeria.svg.png';
+// Components
 import Themebutton from '../themebutton/themebutton';
 import Navbarlinks from '../navbarlinks/navbarlinks';
+// Css Constants
 import { cssText, cssBorders, colors, cssButton } from '../../cssConstants';
+// Icons
+import logo from '../../icons/Flag-map_of_Nigeria.svg.png';
 
 const id = 'menu-popover';
 const logoVariantChild = { hoverStart: { rotate: 360 } };
@@ -62,7 +64,6 @@ function navbar({ themeMode, setTheme }) {
               style={{ width: '40px', height: '30px' }}
             />
           </motion.div>
-
           <p style={{ fontFamily: cssText.fontFamilyPrimary }}>Funayan Oji</p>
         </Stack>
       </motion.div>
