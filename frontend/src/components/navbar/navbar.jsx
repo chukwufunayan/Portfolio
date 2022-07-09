@@ -58,7 +58,6 @@ function navbar({ themeMode, setTheme }) {
       enableColorOnDark
     >
       <motion.div whileHover="hoverStart" variants={logoVariantParent}>
-        {' '}
         <Link
           to="/"
           style={{

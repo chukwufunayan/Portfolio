@@ -84,7 +84,7 @@ function landingpage() {
                 style={{
                   display: 'flex',
                   alignItems: 'center',
-                  columnGap: '.5rem ',
+                  columnGap: cssMargins.marginHalf,
                 }}
               >
                 Download Resume <FileDownloadIcon />
@@ -145,15 +145,29 @@ function landingpage() {
         <Box>
           <AboutSubHeaders>Socials</AboutSubHeaders>
           <Stack direction="row" spacing={{ mobile: cssSpacing.spacing1xl }}>
-            <AccentButtons variant="contained">
-              <TwitterIcon />
-            </AccentButtons>
-            <AccentButtons variant="contained">
-              <InstagramIcon />
-            </AccentButtons>
-            <AccentButtons variant="contained">
-              <GitHubIcon />
-            </AccentButtons>
+            <a
+              href="https://twitter.com/FOjiagbaje"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <AccentButtons variant="contained">
+                <TwitterIcon />
+              </AccentButtons>
+            </a>
+            <a
+              href="https://www.instagram.com/funayan_/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <AccentButtons variant="contained">
+                <InstagramIcon />
+              </AccentButtons>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noreferrer">
+              <AccentButtons variant="contained">
+                <GitHubIcon />
+              </AccentButtons>
+            </a>
           </Stack>
         </Box>
       </GlassPaper>
