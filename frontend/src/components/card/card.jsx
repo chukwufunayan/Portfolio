@@ -14,7 +14,7 @@ import {
 
 function card({ img, title, desc }) {
   return (
-    <Card sx={{ maxWidth: '330px' }}>
+    <Card sx={{ maxWidth: '330px', maxHeight: '260px' }}>
       <CardActionArea>
         <CardMediaAction component="img" image={img} height="170" />
         <CardContent sx={{ padding: cssPadding.padding1xl }}>

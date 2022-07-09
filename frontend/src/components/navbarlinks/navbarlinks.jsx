@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 // Mui
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import { PopupLinks } from './styledElements';
 
 function navbarlinks() {
@@ -23,7 +24,10 @@ function navbarlinks() {
         {/*  <PopupLinks>Posts</PopupLinks>{' '} */}
         {/* </Link> */}
         <Link style={{ textDecoration: 'none' }} to="/">
-          <PopupLinks>View Source</PopupLinks>{' '}
+          <PopupLinks>
+            <GitHubIcon sx={{ verticalAlign: 'bottom' }} />
+            View Source
+          </PopupLinks>{' '}
         </Link>
       </Stack>
     </Box>
