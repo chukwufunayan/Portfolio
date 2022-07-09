@@ -23,12 +23,15 @@ function navbarlinks() {
         {/* <Link style={{ textDecoration: 'none' }} to="/"> */}
         {/*  <PopupLinks>Posts</PopupLinks>{' '} */}
         {/* </Link> */}
-        <Link style={{ textDecoration: 'none' }} to="/">
+        <a
+          style={{ textDecoration: 'none' }}
+          href="https://github.com/chukwufunayan/Portfolio/"
+        >
           <PopupLinks>
             <GitHubIcon sx={{ verticalAlign: 'bottom' }} />
             View Source
           </PopupLinks>{' '}
-        </Link>
+        </a>
       </Stack>
     </Box>
   );
