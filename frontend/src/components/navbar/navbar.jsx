@@ -14,7 +14,13 @@ import { motion } from 'framer-motion';
 import Themebutton from '../themebutton/themebutton';
 import Navbarlinks from '../navbarlinks/navbarlinks';
 // Css Constants
-import { cssText, cssBorders, colors, cssButton } from '../../cssConstants';
+import {
+  cssText,
+  cssBorders,
+  colors,
+  cssButton,
+  cssMargins,
+} from '../../cssConstants';
 // Icons
 import logo from '../../icons/Flag-map_of_Nigeria.svg.png';
 
@@ -52,11 +58,18 @@ function navbar({ themeMode, setTheme }) {
       enableColorOnDark
     >
       <motion.div whileHover="hoverStart" variants={logoVariantParent}>
-        <Stack
-          direction="row"
-          spacing={1}
-          alignItems="center"
-          sx={{ cursor: 'pointer' }}
+        {' '}
+        <Link
+          to="/"
+          style={{
+            fontFamily: cssText.fontFamilyPrimary,
+            textDecoration: 'none',
+            color: colors.commonWhite,
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            columnGap: cssMargins.marginHalf,
+          }}
         >
           <motion.div variants={logoVariantChild}>
             <img
@@ -65,17 +78,8 @@ function navbar({ themeMode, setTheme }) {
               style={{ width: '40px', height: '30px' }}
             />
           </motion.div>
-          <Link
-            to="/"
-            style={{
-              fontFamily: cssText.fontFamilyPrimary,
-              textDecoration: 'none',
-              color: colors.commonWhite,
-            }}
-          >
-            Funayan Oji
-          </Link>
-        </Stack>
+          Funayan Oji
+        </Link>
       </motion.div>
       <Box display={{ mobile: 'none', tablet: 'flex' }}>
         <Navbarlinks />
