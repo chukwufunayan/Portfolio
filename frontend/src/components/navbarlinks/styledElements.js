@@ -10,6 +10,9 @@ export const PopupLinks = styled('a')(
   font-family: ${cssText.fontFamilySecondary};
   color: ${primary.contrastText};
   margin: 0rem;
+  display: flex;
+  align-items: center;
+  column-gap:.25rem;
   padding: .5rem;
   text-underline-offset: .2rem;
   cursor: pointer;

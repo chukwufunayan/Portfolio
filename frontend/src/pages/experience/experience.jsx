@@ -119,7 +119,12 @@ function experience() {
         <AboutParagraphs>
           Projects that I've done over the years.
         </AboutParagraphs>
-        <Grid container rowSpacing={3} marginTop={cssMargins.marginHalf}>
+        <Grid
+          container
+          rowSpacing={3}
+          columnSpacing={1}
+          marginTop={cssMargins.marginHalf}
+        >
           <Grid item mobile={12} tablet={5.7}>
             <Card
               img={Pedalup}

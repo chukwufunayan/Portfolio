@@ -77,11 +77,9 @@ function landingpage() {
               marginTop: cssMargins.margin2xl,
               marginBottom: cssMargins.margin1xl,
             }}
+            onClick={() => dwnldFile()}
           >
-            <ButtonHeader
-              sx={{ textAlign: 'center' }}
-              onClick={() => dwnldFile()}
-            >
+            <ButtonHeader sx={{ textAlign: 'center' }}>
               <span
                 style={{
                   display: 'flex',

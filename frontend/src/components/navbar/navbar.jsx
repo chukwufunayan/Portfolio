@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 // Mui
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
@@ -64,7 +65,16 @@ function navbar({ themeMode, setTheme }) {
               style={{ width: '40px', height: '30px' }}
             />
           </motion.div>
-          <p style={{ fontFamily: cssText.fontFamilyPrimary }}>Funayan Oji</p>
+          <Link
+            to="/"
+            style={{
+              fontFamily: cssText.fontFamilyPrimary,
+              textDecoration: 'none',
+              color: colors.commonWhite,
+            }}
+          >
+            Funayan Oji
+          </Link>
         </Stack>
       </motion.div>
       <Box display={{ mobile: 'none', tablet: 'flex' }}>

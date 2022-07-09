@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Box from '@mui/material/Box';
 // Three JS Dependencies
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -16,29 +16,20 @@ function voxelreplica() {
   useEffect(() => {
     // Scene
     const scene = new THREE.Scene();
-    scene.add(new THREE.AxesHelper(100));
+    // scene.add(new THREE.AxesHelper(100));
 
     // Light
     const pointLight = new THREE.PointLight(0xcccccc);
     pointLight.position.set(-3, 25, 7);
-    const pointLightHelper = new THREE.PointLightHelper(pointLight);
+    // const pointLightHelper = new THREE.PointLightHelper(pointLight);
     pointLight.castShadow = true;
     pointLight.shadow.bias = -0.001;
     const ambientLight = new THREE.AmbientLight(0xcccccc, 0.95);
-    scene.add(ambientLight, pointLight, pointLightHelper);
+    scene.add(ambientLight, pointLight);
+
     // camera
-    // const camera = new THREE.PerspectiveCamera(
-    //   75,
-    //   ref.current.clientWidth / ref.current.clientHeight,
-    //   0.1,
-    //   1000
-    // );
-    //
-    // camera.position.z = 22.389933119740018;
-    // camera.position.y = 11.61866237153789;
-    // camera.position.x = -5.410301035552537;
     const aspect = ref.current.clientWidth / ref.current.clientHeight;
-    const d = 16;
+    const d = 18;
     const camera = new THREE.OrthographicCamera(
       -d * aspect,
       d * aspect,
@@ -48,7 +39,7 @@ function voxelreplica() {
       1000
     );
     camera.position.set(-10.26, 13.2, 6.3); // all components equal
-    camera.lookAt(scene.position); // or the origin
+    // camera.lookAt(scene.position); // or the origin
 
     // Renderer
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -64,10 +55,13 @@ function voxelreplica() {
     controls.enableDamping = true;
 
     // Loader
+    let voxelObject = null;
     const loader = new GLTFLoader();
     loader.load(
       voxelReplica,
       function (gltf) {
+        voxelObject = gltf.scene;
+        camera.lookAt(voxelObject.position);
         gltf.scene.traverse(function (child) {
           if (child.isMesh) {
             console.log('child mesh:', child);
@@ -75,7 +69,9 @@ function voxelreplica() {
             child.castShadow = true;
           }
         });
-        scene.add(gltf.scene);
+        voxelObject.position.x -= 2;
+        voxelObject.position.z += 2;
+        scene.add(voxelObject);
       },
       undefined,
       function (error) {
@@ -84,8 +80,8 @@ function voxelreplica() {
     );
 
     // stats
-    const stats = Stats();
-    ref.current.appendChild(stats.dom);
+    //  const stats = Stats();
+    // ref.current.appendChild(stats.dom);
     function render() {
       // console.log('3js rendered:', camera.position);
       renderer.render(scene, camera);
@@ -102,14 +98,34 @@ function voxelreplica() {
     window.addEventListener('resize', onWindowResize, false);
 
     // Animate Func
+    let counterClockwise = true;
     function animate() {
       requestAnimationFrame(animate);
-      controls.update();
+
+      if (voxelObject) {
+        if (counterClockwise) {
+          voxelObject.rotation.y += 0.001;
+        } else {
+          voxelObject.rotation.y -= 0.001;
+        }
+        if (voxelObject.rotation.y <= -0.55) {
+          counterClockwise = true;
+        } else if (voxelObject.rotation.y >= 0.55) {
+          counterClockwise = false;
+        }
+        console.log(voxelObject.rotation.y);
+      }
+
       render();
-      stats.update();
+      controls.update();
+      // stats.update();
     }
 
     animate();
+    return () => {
+      pointLight.dispose();
+      voxelObject.dispose();
+    };
   }, []);
   return (
     <Box
