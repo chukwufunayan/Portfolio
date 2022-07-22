@@ -64,7 +64,6 @@ function voxelreplica() {
         camera.lookAt(voxelObject.position);
         gltf.scene.traverse(function (child) {
           if (child.isMesh) {
-            console.log('child mesh:', child);
             child.receiveShadow = true;
             child.castShadow = true;
           }
@@ -83,13 +82,11 @@ function voxelreplica() {
     //  const stats = Stats();
     // ref.current.appendChild(stats.dom);
     function render() {
-      // console.log('3js rendered:', camera.position);
       renderer.render(scene, camera);
     }
 
     // Window Resize Callback
     function onWindowResize() {
-      console.log('window callback');
       camera.aspect = ref.current.clientWidth / ref.current.clientHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(ref.current.clientWidth, ref.current.clientHeight);
@@ -113,7 +110,6 @@ function voxelreplica() {
         } else if (voxelObject.rotation.y >= 0.55) {
           counterClockwise = false;
         }
-        console.log(voxelObject.rotation.y);
       }
 
       render();
@@ -124,7 +120,6 @@ function voxelreplica() {
     animate();
     return () => {
       pointLight.dispose();
-      voxelObject.dispose();
     };
   }, []);
   return (
