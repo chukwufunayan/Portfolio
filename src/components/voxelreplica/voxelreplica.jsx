@@ -1,12 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Box from '@mui/material/Box';
 // Three JS Dependencies
 // eslint-disable-next-line import/no-extraneous-dependencies
 import * as THREE from 'three';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import Stats from 'three/examples/jsm/libs/stats.module';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import voxelReplica from './withoutclothingrack.glb';
@@ -64,7 +62,9 @@ function voxelreplica() {
         camera.lookAt(voxelObject.position);
         gltf.scene.traverse(function (child) {
           if (child.isMesh) {
+            // eslint-disable-next-line no-param-reassign
             child.receiveShadow = true;
+            // eslint-disable-next-line no-param-reassign
             child.castShadow = true;
           }
         });
