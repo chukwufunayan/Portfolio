@@ -4,34 +4,35 @@ import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import { PopupLinks } from './styledElements';
+// Styled Elements
+import { PopupLinks, PopupLinksParagraph } from './styledElements';
 
 function navbarlinks() {
   return (
     <Box sx={{ minWidth: '14rem' }}>
       <Stack
         direction={{ mobile: 'column', tablet: 'row' }}
+        alignItems={{ tablet: 'center' }}
         sx={{ padding: '.45rem .25rem' }}
         spacing={{ tablet: 2 }}
       >
         <Link style={{ textDecoration: 'none' }} to="/">
-          <PopupLinks>About</PopupLinks>
+          <PopupLinksParagraph>About</PopupLinksParagraph>
         </Link>
         <Link style={{ textDecoration: 'none' }} to="experience">
-          <PopupLinks>Experience</PopupLinks>
+          <PopupLinksParagraph>Experience</PopupLinksParagraph>
         </Link>
         {/* <Link style={{ textDecoration: 'none' }} to="/"> */}
         {/*  <PopupLinks>Posts</PopupLinks>{' '} */}
         {/* </Link> */}
-        <a
-          style={{ textDecoration: 'none' }}
+        <PopupLinks
           href="https://github.com/chukwufunayan/Portfolio/"
+          target="_blank"
+          rel="noreferrer"
         >
-          <PopupLinks>
-            <GitHubIcon sx={{ verticalAlign: 'bottom' }} />
-            View Source
-          </PopupLinks>{' '}
-        </a>
+          <GitHubIcon sx={{ verticalAlign: 'bottom' }} />
+          View Source
+        </PopupLinks>{' '}
       </Stack>
     </Box>
   );

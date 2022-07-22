@@ -28,7 +28,6 @@ import {
   ReactJs,
   Pedalup,
   Artsite,
-  Naturalproduct,
 } from '../../util/photoExport';
 
 function experience() {
@@ -67,7 +66,8 @@ function experience() {
             </DescSecondaryColorInline>
             <ExperienceDesc> Application Developer</ExperienceDesc>
             <AboutParagraphs>
-              I currently work here as a fullstack engineer.
+              I Worked There on the banking department as an appliocation
+              developer.
             </AboutParagraphs>
           </Grid>
         </Grid>
@@ -117,7 +117,7 @@ function experience() {
       <Box>
         <AboutSubHeaders>My Projects</AboutSubHeaders>
         <AboutParagraphs>
-          Projects that I've done over the years.
+          Projects that I&#39;ve done over the years.
         </AboutParagraphs>
         <Grid
           container
@@ -130,6 +130,7 @@ function experience() {
               img={Pedalup}
               title="Buycycle"
               desc="A website geared towards selling bicycle"
+              link="https://buycycleteam.netlify.app"
             />
           </Grid>{' '}
           <Grid item mobile={12} tablet={5.7}>
@@ -137,13 +138,7 @@ function experience() {
               img={Artsite}
               title="Art Portfolio"
               desc="A Project Created For a client"
-            />
-          </Grid>{' '}
-          <Grid item mobile={12} tablet={5.7}>
-            <Card
-              img={Naturalproduct}
-              title="E-commerce Website"
-              desc="An E-commerce site made for a client to sell her natural beauty products"
+              link="https://artportfolioweb.netlify.app"
             />
           </Grid>
         </Grid>
