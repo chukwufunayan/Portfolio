@@ -2,13 +2,9 @@ import { styled } from '@mui/material/styles';
 import { cssText } from '../../cssConstants';
 
 export const PopupLinksParagraph = styled('p')(
-  ({
-    theme: {
-      palette: { primary },
-    },
-  }) => `
+  ({ theme: { palette } }) => `
   font-family: ${cssText.fontFamilySecondary};
-  color: ${primary.contrastText};
+  color:${palette.mode === 'light' ? '#323232' : '#E2E8F0'};
   margin: 0rem;
   display: flex;
   align-items: center;
@@ -23,13 +19,9 @@ export const PopupLinksParagraph = styled('p')(
 );
 
 export const PopupLinks = styled('a')(
-  ({
-    theme: {
-      palette: { primary },
-    },
-  }) => `
+  ({ theme: { palette } }) => `
   font-family: ${cssText.fontFamilySecondary};
-  color: ${primary.contrastText};
+  color: ${palette.mode === 'light' ? '#323232' : '#E2E8F0'};
   margin: 0rem;
   display: flex;
   align-items: center;

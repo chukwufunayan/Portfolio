@@ -123,6 +123,7 @@ function navbar({ themeMode, setTheme }) {
           vertical: 'top',
           horizontal: 'right',
         }}
+        variant="navbarPortable"
       >
         <Navbarlinks />
       </Popover>

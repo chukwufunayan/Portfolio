@@ -22,7 +22,7 @@ function themeDesign() {
             },
             background: {
               default: '#f0e7db',
-              paper: 'rgba(239,229,220,0.54)',
+              paper: 'rgb(239,229,220)',
             },
             themeButton: {
               main: '#8730C9',
@@ -39,7 +39,7 @@ function themeDesign() {
             },
             background: {
               default: '#323232',
-              paper: '#4242421f',
+              paper: '#424242',
             },
             themeButton: {
               main: '#ffd33d',
