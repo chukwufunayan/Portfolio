@@ -101,9 +101,9 @@ function voxelreplica() {
 
       if (voxelObject) {
         if (counterClockwise) {
-          voxelObject.rotation.y += 0.001;
+          voxelObject.rotation.y += 0.0015;
         } else {
-          voxelObject.rotation.y -= 0.001;
+          voxelObject.rotation.y -= 0.0015;
         }
         if (voxelObject.rotation.y <= -0.55) {
           counterClockwise = true;
