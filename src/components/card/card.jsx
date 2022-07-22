@@ -12,17 +12,24 @@ import {
   CardMediaAction,
 } from './styledElements';
 
-function card({ img, title, desc }) {
+function card({ img, title, desc, link }) {
   return (
-    <Card sx={{ maxWidth: '330px', maxHeight: '260px' }}>
-      <CardActionArea>
-        <CardMediaAction component="img" image={img} height="170" />
-        <CardContent sx={{ padding: cssPadding.padding1xl }}>
-          <AboutHeaders>{title}</AboutHeaders>
-          <AboutParagraphs>{desc}</AboutParagraphs>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+    <a
+      href={link}
+      target="_blank"
+      rel="noreferrer"
+      style={{ textDecoration: 'none' }}
+    >
+      <Card sx={{ maxWidth: '330px', maxHeight: '260px' }}>
+        <CardActionArea>
+          <CardMediaAction component="img" image={img} height="170" />
+          <CardContent sx={{ padding: cssPadding.padding1xl }}>
+            <AboutHeaders>{title}</AboutHeaders>
+            <AboutParagraphs>{desc}</AboutParagraphs>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </a>
   );
 }
 export default card;

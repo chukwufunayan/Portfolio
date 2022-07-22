@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
 import Avatar from '@mui/material/Avatar';
-import TwitterIcon from '@mui/icons-material/Twitter';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
@@ -22,7 +22,7 @@ import {
   AccentButtons,
 } from './styledElements';
 // images
-import avatarHeadshot from '../../icons/blackmanheadshot.jpeg';
+import selfPortrait1 from '../../icons/selfPortrait1.JPG';
 
 const { dwnldFile } = saveFile();
 
@@ -51,10 +51,10 @@ function landingpage() {
             <AboutHeaders>Funayan Ojiagbaje</AboutHeaders>
             <AboutParagraphs>Developer / Freelancer / Believer</AboutParagraphs>
           </Box>
-          <Box width="100px" height="100px">
+          <Box width="130px" height="130px">
             <Avatar
               alt="self portrait avatar"
-              src={avatarHeadshot}
+              src={selfPortrait1}
               sx={{
                 minWidth: '100%',
                 minHeight: '100%',
@@ -64,10 +64,11 @@ function landingpage() {
           </Box>
         </Stack>
         <AboutParagraphs>
-          Hey There, I'm Funayan! A passionate developer based in Atlanta,ga who
-          is always in pursuit of constant learning. I have interests in solving
-          real world problems, and being able to use my skills in programming
-          and development to do that is always an opportunity I look forward to!
+          Hey There, I&#39;m Funayan! A passionate developer based in Atlanta,ga
+          who is always in pursuit of constant learning. I have interests in
+          solving real world problems, and being able to use my skills in
+          programming and development to do that is always an opportunity I look
+          forward to!
         </AboutParagraphs>
         <Stack direction="row" justifyContent="center">
           {' '}
@@ -124,8 +125,8 @@ function landingpage() {
         <Box>
           <AboutSubHeaders>Interests</AboutSubHeaders>
           <AboutParagraphs>
-            I'm a very adventurous individual who also likes challenging
-            himself. When i'm not coding, I enjoy{' '}
+            I&#39;m a very adventurous individual who also likes challenging
+            himself. When i&#39;m not coding, I enjoy{' '}
             <AboutParagSecondary
               href="https://www.strava.com/athletes/fojiagbaje "
               target="_blank"
@@ -146,21 +147,21 @@ function landingpage() {
           <AboutSubHeaders>Socials</AboutSubHeaders>
           <Stack direction="row" spacing={{ mobile: cssSpacing.spacing1xl }}>
             <a
-              href="https://twitter.com/FOjiagbaje"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <AccentButtons variant="contained">
-                <TwitterIcon />
-              </AccentButtons>
-            </a>
-            <a
               href="https://www.instagram.com/funayan_/"
               target="_blank"
               rel="noreferrer"
             >
               <AccentButtons variant="contained">
                 <InstagramIcon />
+              </AccentButtons>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/chukwufunayan-ojiagbaje-05027b15a"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <AccentButtons variant="contained">
+                <LinkedInIcon />
               </AccentButtons>
             </a>
             <a href="https://github.com" target="_blank" rel="noreferrer">

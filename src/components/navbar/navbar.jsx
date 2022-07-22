@@ -80,7 +80,7 @@ function navbar({ themeMode, setTheme }) {
           Funayan Oji
         </Link>
       </motion.div>
-      <Box display={{ mobile: 'none', tablet: 'flex' }}>
+      <Box display={{ mobile: 'none', tablet: 'block' }}>
         <Navbarlinks />
       </Box>
       <Stack direction={{ mobile: 'column', phone: 'row' }} spacing={1}>
