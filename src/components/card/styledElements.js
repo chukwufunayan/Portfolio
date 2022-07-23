@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
 import CardMedia from '@mui/material/CardMedia';
-import { cssMargins, cssText } from '../../cssConstants';
+import { cssMargins, cssText } from '../../util/cssConstants';
 
 export const AboutHeaders = styled('h2')({
   fontFamily: cssText.fontFamilyPrimary,

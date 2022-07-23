@@ -4,7 +4,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { CardActionArea } from '@mui/material';
 // Css Constants
-import { cssPadding } from '../../cssConstants';
+import { cssPadding } from '../../util/cssConstants';
 // Styled Elements
 import {
   AboutHeaders,
