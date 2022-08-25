@@ -8,7 +8,12 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
-import { cssMargins, colors, cssBorders, cssSpacing } from '../../cssConstants';
+import {
+  cssMargins,
+  colors,
+  cssBorders,
+  cssSpacing,
+} from '../../util/cssConstants';
 import saveFile from '../../util/fileDownloader';
 import GlassPaper from '../../components/glasspaper/glasspaper';
 // Styled Elements
