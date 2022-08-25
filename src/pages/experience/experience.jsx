@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid';
 import GlassPaper from '../../components/glasspaper/glasspaper';
 import Card from '../../components/card/card';
 // Css Constants
-import { colors, cssMargins } from '../../cssConstants';
+import { colors, cssMargins } from '../../util/cssConstants';
 // Styled Elements
 import {
   TitleHeaders,
@@ -16,19 +16,8 @@ import {
   AboutParagraphs,
   CardMediaIcon,
 } from './styledComponents';
-// images
-import {
-  CPlus,
-  Css,
-  Html,
-  Java,
-  Js,
-  Linux,
-  NodeJs,
-  ReactJs,
-  Pedalup,
-  Artsite,
-} from '../../util/photoExport';
+// Constants Imports
+import { skillsList, projectsList } from './experiencelist';
 
 function experience() {
   console.log('icons', module);
@@ -80,38 +69,12 @@ function experience() {
           challenge.
         </AboutParagraphs>
         <Grid container rowSpacing={3} marginTop={cssMargins.marginHalf}>
-          <Grid item mobile={12} phone={6} tablet={4}>
-            <CardMediaIcon image={ReactJs} />
-            <ExperienceDesc>React.Js</ExperienceDesc>
-          </Grid>
-          <Grid item mobile={12} phone={6} tablet={3.7}>
-            <CardMediaIcon image={NodeJs} alt="nodejs img" />
-            <ExperienceDesc>Node.JS</ExperienceDesc>
-          </Grid>
-          <Grid item mobile={12} phone={6} tablet={3.7}>
-            <CardMediaIcon image={Linux} alt="linuc img" />
-            <ExperienceDesc>Linux</ExperienceDesc>
-          </Grid>
-          <Grid item mobile={12} phone={6} tablet={3.7}>
-            <CardMediaIcon image={Js} alt="js img" />
-            <ExperienceDesc>JavaScript</ExperienceDesc>
-          </Grid>
-          <Grid item mobile={12} phone={6} tablet={3.7}>
-            <CardMediaIcon image={Java} alt="java img" />
-            <ExperienceDesc>Java</ExperienceDesc>
-          </Grid>
-          <Grid item mobile={12} phone={6} tablet={3.7}>
-            <CardMediaIcon image={Html} alt="html img" />
-            <ExperienceDesc>HTML</ExperienceDesc>
-          </Grid>
-          <Grid item mobile={12} phone={6} tablet={3.7}>
-            <CardMediaIcon image={Css} alt="css img" />
-            <ExperienceDesc>CSS</ExperienceDesc>
-          </Grid>
-          <Grid item mobile={12} phone={6} tablet={3.7}>
-            <CardMediaIcon image={CPlus} alt="c plus img" />
-            <ExperienceDesc>C++</ExperienceDesc>
-          </Grid>
+          {skillsList.map((item) => (
+            <Grid key={item.desc} item mobile={12} phone={6} tablet={3.8}>
+              <CardMediaIcon image={item.image} />
+              <ExperienceDesc>{item.desc}</ExperienceDesc>
+            </Grid>
+          ))}
         </Grid>
       </Box>
       <Box>
@@ -125,22 +88,17 @@ function experience() {
           columnSpacing={1}
           marginTop={cssMargins.marginHalf}
         >
-          <Grid item mobile={12} tablet={5.7}>
-            <Card
-              img={Pedalup}
-              title="Buycycle"
-              desc="A website geared towards selling bicycle"
-              link="https://buycycleteam.netlify.app"
-            />
-          </Grid>{' '}
-          <Grid item mobile={12} tablet={5.7}>
-            <Card
-              img={Artsite}
-              title="Art Portfolio"
-              desc="A Project Created For a client"
-              link="https://artportfolioweb.netlify.app"
-            />
-          </Grid>
+          {projectsList.map((item) => (
+            <Grid item mobile={12} tablet={5.7}>
+              {' '}
+              <Card
+                img={item.image}
+                title={item.title}
+                desc={item.desc}
+                link={item.link}
+              />
+            </Grid>
+          ))}
         </Grid>
       </Box>
     </GlassPaper>

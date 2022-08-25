@@ -1,10 +1,7 @@
 import React, { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
 // Mui
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
-import AppBar from '@mui/material/AppBar';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import Popover from '@mui/material/Popover';
@@ -14,13 +11,9 @@ import { motion } from 'framer-motion';
 import Themebutton from '../themebutton/themebutton';
 import Navbarlinks from '../navbarlinks/navbarlinks';
 // Css Constants
-import {
-  cssText,
-  cssBorders,
-  colors,
-  cssButton,
-  cssMargins,
-} from '../../cssConstants';
+import { colors } from '../../util/cssConstants';
+// Styled Elements
+import { AppBarStyled, LinkStyled, ButtonStyled } from './styledElements';
 // Icons
 import logo from '../../icons/Flag-map_of_Nigeria.svg.png';
 
@@ -42,34 +35,14 @@ function navbar({ themeMode, setTheme }) {
   const open = Boolean(anchorEl);
 
   return (
-    <AppBar
+    <AppBarStyled
       color="primary"
       position="sticky"
-      sx={{
-        padding: '.4rem .5rem',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        width: '100%',
-        maxWidth: '1024px',
-      }}
       ref={navbarRef}
       enableColorOnDark
     >
       <motion.div whileHover="hoverStart" variants={logoVariantParent}>
-        <Link
-          to="/"
-          style={{
-            fontFamily: cssText.fontFamilyPrimary,
-            textDecoration: 'none',
-            color: colors.commonWhite,
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            columnGap: cssMargins.marginHalf,
-          }}
-        >
+        <LinkStyled to="/">
           <motion.div variants={logoVariantChild}>
             <img
               alt="naija flag logo"
@@ -78,23 +51,14 @@ function navbar({ themeMode, setTheme }) {
             />
           </motion.div>
           Funayan Oji
-        </Link>
+        </LinkStyled>
       </motion.div>
       <Box display={{ mobile: 'none', tablet: 'block' }}>
         <Navbarlinks />
       </Box>
       <Stack direction={{ mobile: 'column', phone: 'row' }} spacing={1}>
         <Themebutton themeMode={themeMode} setTheme={setTheme} />
-        <Button
-          sx={{
-            backgroundColor: '#f7f3f321',
-            border: cssBorders.borderWhite1,
-            padding: cssButton.padding,
-            display: { tablet: 'none' },
-          }}
-          aria-describedby={id}
-          onClick={handleClick}
-        >
+        <ButtonStyled aria-describedby={id} onClick={handleClick}>
           {open ? (
             <CloseIcon
               sx={{
@@ -108,7 +72,7 @@ function navbar({ themeMode, setTheme }) {
               }}
             />
           )}
-        </Button>
+        </ButtonStyled>
       </Stack>
       <Popover
         sx={{ display: { tablet: 'none' } }}
@@ -127,7 +91,7 @@ function navbar({ themeMode, setTheme }) {
       >
         <Navbarlinks />
       </Popover>
-    </AppBar>
+    </AppBarStyled>
   );
 }
 

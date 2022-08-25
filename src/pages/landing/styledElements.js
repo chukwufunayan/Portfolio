@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
-import { cssButton, cssMargins, cssText } from '../../cssConstants';
+import { cssButton, cssMargins, cssText } from '../../util/cssConstants';
 
 export const AboutHeaders = styled('h1')({
   fontFamily: cssText.fontFamilyPrimary,
