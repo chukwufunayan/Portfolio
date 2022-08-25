@@ -27,7 +27,7 @@ import {
   AccentButtons,
 } from './styledElements';
 // images
-import selfPortrait1 from '../../icons/selfPortrait1.JPG';
+import selfPortrait1 from '../../resources/images/selfPortrait1.JPG';
 
 const { dwnldFile } = saveFile();
 
