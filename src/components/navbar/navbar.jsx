@@ -15,7 +15,7 @@ import { colors } from '../../util/cssConstants';
 // Styled Elements
 import { AppBarStyled, LinkStyled, ButtonStyled } from './styledElements';
 // Icons
-import logo from '../../icons/Flag-map_of_Nigeria.svg.png';
+import logo from '../../resources/icons/Flag-map_of_Nigeria.svg.png';
 
 const id = 'menu-popover';
 const logoVariantChild = { hoverStart: { rotate: 360 } };
