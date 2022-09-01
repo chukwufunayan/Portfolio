@@ -29,7 +29,8 @@
   "eslintConfig": {
     "extends": [
       "airbnb",
-      "plugin:prettier/recommended"],
+      "plugin:prettier/recommended"
+    ],
     "parserOptions": {
       "allowImportExportEverywhere": true
     }
