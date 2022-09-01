@@ -54,12 +54,8 @@ export const AboutParagSecondary = styled('a')(
     margin:${cssMargins.marginNone};
     line-height:${cssText.lineHeightBase};
     color:${secondary.main};
-    text-decoration: none;
     display: inline-block;
     
-    :hover{
-      text-decoration: underline;
-    }
     `
 );
 export const AccentButtons = styled(Button)(

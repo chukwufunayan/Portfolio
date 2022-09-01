@@ -137,14 +137,14 @@ function landingpage() {
               target="_blank"
             >
               cycling
-            </AboutParagSecondary>
-            ,{' '}
+            </AboutParagSecondary>{' '}
+            ,
             <AboutParagSecondary
               href="https://music.apple.com/us/playlist/naija/pl.u-06oxDj6tkXBxzb"
               target="_blank"
             >
               listening to music
-            </AboutParagSecondary>
+            </AboutParagSecondary>{' '}
             , cooking, and watching sports.
           </AboutParagraphs>
         </Box>
@@ -169,7 +169,11 @@ function landingpage() {
                 <LinkedInIcon />
               </AccentButtons>
             </a>
-            <a href="https://github.com" target="_blank" rel="noreferrer">
+            <a
+              href="https://github.com/chukwufunayan"
+              target="_blank"
+              rel="noreferrer"
+            >
               <AccentButtons variant="contained">
                 <GitHubIcon />
               </AccentButtons>
