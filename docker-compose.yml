@@ -8,5 +8,5 @@ services:
     volumes:
       - ./:/app
       - /app/node_modules
-    command: ["sh","-c","npm install && npm start"]
+    command: ["sh","-c","npm install && mkdir -p node_modules/.cache && chmod -R 777 node_modules/.cache && npm start"]
 
