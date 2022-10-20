@@ -16,5 +16,5 @@ jobs:
       - id: 'deploy'
         uses: 'google-github-actions/deploy-appengine@v0'
       - name: 'console logging url'
-        run: echo ${{steps.deploy.url}}
+        run: echo ${{steps.deploy.outputs.url}}
 
