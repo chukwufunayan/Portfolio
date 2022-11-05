@@ -53,7 +53,7 @@ function landingpage() {
           }}
         >
           <Box sx={{ textAlign: 'center' }}>
-            <AboutHeaders>Funayan Ojiagbaje</AboutHeaders>
+            <AboutHeaders>Funayan OjiagbajeS</AboutHeaders>
             <AboutParagraphs>Developer / Freelancer / Believer</AboutParagraphs>
           </Box>
           <Box width="130px" height="130px">
