@@ -1,5 +1,4 @@
 name: Google App Engine Deployment
-on: [push]
 jobs:
   deployment:
     environment: prod

@@ -10,7 +10,7 @@ import {
   cssMargins,
 } from '../../util/cssConstants';
 
-const AppBarStyled = styled(AppBar)`
+export const AppBarStyled = styled(AppBar)`
   padding: 0.4rem 0.5rem;
   display: flex;
   flex-direction: row;
@@ -19,7 +19,7 @@ const AppBarStyled = styled(AppBar)`
   width: 100%;
   max-width: 1024px;
 `;
-const LinkStyled = styled(Link)`
+export const LinkStyled = styled(Link)`
   font-family: ${cssText.fontFamilyPrimary};
   text-decoration: none;
   color: ${colors.commonWhite};
@@ -28,7 +28,7 @@ const LinkStyled = styled(Link)`
   align-items: center;
   column-gap: ${cssMargins.marginHalf};
 `;
-const ButtonStyled = styled(Button)(({ theme: { breakpoints } }) => ({
+export const ButtonStyled = styled(Button)(({ theme: { breakpoints } }) => ({
   backgroundColor: '#f7f3f321',
   border: cssBorders.borderWhite1,
   padding: cssButton.padding,
@@ -36,4 +36,3 @@ const ButtonStyled = styled(Button)(({ theme: { breakpoints } }) => ({
     display: 'none',
   },
 }));
-export { AppBarStyled, LinkStyled, ButtonStyled };

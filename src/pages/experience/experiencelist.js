@@ -10,6 +10,7 @@ import {
   NodeJs,
   Pedalup,
   ReactJs,
+  Docker,
 } from '../../util/photoExport';
 
 const skillsList = [
@@ -21,6 +22,7 @@ const skillsList = [
   { image: Html, desc: 'HTML' },
   { image: Css, desc: 'CSS' },
   { image: CPlus, desc: 'C++' },
+  { image: Docker, desc: 'Docker' },
 ];
 const projectsList = [
   {
