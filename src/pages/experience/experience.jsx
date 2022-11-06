@@ -3,7 +3,8 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import GlassPaper from '../../components/glasspaper/glasspaper';
-import Card from '../../components/card/card';
+// import Card from '../../components/card/card';
+
 // Css Constants
 import { colors, cssMargins } from '../../util/cssConstants';
 // Styled Elements
@@ -17,7 +18,7 @@ import {
   CardMediaIcon,
 } from './styledComponents';
 // Constants Imports
-import { skillsList, projectsList } from './experiencelist';
+import { skillsList } from './experiencelist';
 
 function experience() {
   console.log('icons', module);
@@ -45,7 +46,8 @@ function experience() {
             <ExperienceDesc> Software Engineer</ExperienceDesc>
             <AboutParagraphs>
               I currently work here as a fullstack engineer in the retail media
-              Department.
+              Department.Currently working helping the development of a new
+              offsite advertisement application in our retail media platform.
             </AboutParagraphs>
           </Grid>
           <Grid item mobile={12} tablet={6}>
@@ -55,8 +57,10 @@ function experience() {
             </DescSecondaryColorInline>
             <ExperienceDesc> Application Developer</ExperienceDesc>
             <AboutParagraphs>
-              I Worked There on the banking department as an appliocation
-              developer.
+              I Worked here in the banking department as an application
+              developer.Maintained, updated and developed ongoing features on
+              different the frontend and backend apps for a web platform called
+              Operation O-360
             </AboutParagraphs>
           </Grid>
         </Grid>
@@ -77,7 +81,7 @@ function experience() {
           ))}
         </Grid>
       </Box>
-      <Box>
+      {/* <Box>
         <AboutSubHeaders>My Projects</AboutSubHeaders>
         <AboutParagraphs>
           Projects that I&#39;ve done over the years.
@@ -90,7 +94,7 @@ function experience() {
         >
           {projectsList.map((item) => (
             <Grid item mobile={12} tablet={5.7}>
-              {' '}
+              {" "}
               <Card
                 img={item.image}
                 title={item.title}
@@ -100,7 +104,7 @@ function experience() {
             </Grid>
           ))}
         </Grid>
-      </Box>
+      </Box> */}
     </GlassPaper>
   );
 }

@@ -1,0 +1,12 @@
+FROM node:18.3.0-alpine3.16 as builder
+WORKDIR /app
+COPY . .
+COPY package.json /app/package.json
+RUN npm install
+RUN npm run build
+
+#Serve Static Files To NGNIX Server
+FROM nginx:alpine
+COPY --from=builder /app/build usr/share/nginx/html
+ENV PORT 80
+EXPOSE 8080

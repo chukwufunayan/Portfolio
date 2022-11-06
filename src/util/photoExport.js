@@ -6,6 +6,7 @@ import Js from '../resources/icons/javascript.png';
 import Linux from '../resources/icons/linux.png';
 import NodeJs from '../resources/icons/node-js.png';
 import ReactJs from '../resources/icons/reactJs.png';
+import Docker from '../resources/icons/docker.png';
 import Pedalup from '../resources/images/pedalup.png';
 import Artsite from '../resources/images/artsite.png';
 import Naturalproduct from '../resources/images/naturalproduct.png';
@@ -19,6 +20,7 @@ export {
   Linux,
   NodeJs,
   ReactJs,
+  Docker,
   Pedalup,
   Artsite,
   Naturalproduct,

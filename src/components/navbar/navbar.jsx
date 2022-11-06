@@ -8,8 +8,8 @@ import Popover from '@mui/material/Popover';
 // Motion Frame
 import { motion } from 'framer-motion';
 // Components
-import Themebutton from '../themebutton/themebutton';
-import Navbarlinks from '../navbarlinks/navbarlinks';
+import Themebutton from './themebutton/themebutton';
+import Navbarlinks from './navbarlinks/navbarlinks';
 // Css Constants
 import { colors } from '../../util/cssConstants';
 // Styled Elements

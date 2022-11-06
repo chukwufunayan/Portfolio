@@ -5,7 +5,7 @@ import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
 import Avatar from '@mui/material/Avatar';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import InstagramIcon from '@mui/icons-material/Instagram';
+// import InstagramIcon from '@mui/icons-material/Instagram';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import {
@@ -151,15 +151,15 @@ function landingpage() {
         <Box>
           <AboutSubHeaders>Socials</AboutSubHeaders>
           <Stack direction="row" spacing={{ mobile: cssSpacing.spacing1xl }}>
-            <a
-              href="https://www.instagram.com/funayan_/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <AccentButtons variant="contained">
-                <InstagramIcon />
-              </AccentButtons>
-            </a>
+            {/* <a */}
+            {/*  href="https://www.instagram.com/funayan_/" */}
+            {/*  target="_blank" */}
+            {/*  rel="noreferrer" */}
+            {/* > */}
+            {/*  <AccentButtons variant="contained"> */}
+            {/*    <InstagramIcon /> */}
+            {/*  </AccentButtons> */}
+            {/* </a> */}
             <a
               href="https://www.linkedin.com/in/chukwufunayan-ojiagbaje-05027b15a"
               target="_blank"
