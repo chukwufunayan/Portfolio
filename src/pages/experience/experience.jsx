@@ -70,7 +70,7 @@ function experience() {
         <AboutParagraphs>
           With about 2 and a half years of professional Experience, I have both
           grown in and developed new skills along the way to help tackle any
-          challenge.
+          challenge .
         </AboutParagraphs>
         <Grid container rowSpacing={3} marginTop={cssMargins.marginHalf}>
           {skillsList.map((item) => (
