@@ -152,7 +152,7 @@ function landingpage() {
           <AboutSubHeaders>Socials</AboutSubHeaders>
           <Stack direction="row" spacing={{ mobile: cssSpacing.spacing1xl }}>
             {/* <a */}
-            {/*  href="https://www.instagram.com/funayan_/" */}
+            {/*  href= */}
             {/*  target="_blank" */}
             {/*  rel="noreferrer" */}
             {/* > */}

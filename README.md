@@ -4,9 +4,9 @@
 ![img](./portfolio_website_img.png)
 
 ## Technologies
+- [Material-UI](https://mui.com/material-ui/getting-started/overview/) - A React component library that includes a comprehensive collection of prebuilt components that are ready for use in production right out of the box.
 - [React.js](https://reactjs.org/) - A JavaScript library for building user interfaces
 - [React Router(V6)](https://reactjs.org/) -a collection of React components, hooks and utilities that make it easy to build multi-page applications with React.
-- [Material-UI](https://mui.com/material-ui/getting-started/overview/) - A React component library that includes a comprehensive collection of prebuilt components that are ready for use in production right out of the box.
 - [Three.js](https://threejs.org/) - vaScript library and application programming interface used to create and display animated 3D computer graphics in a web browser
 - [Framer Motion](https://www.framer.com/motion/) - An animation library for React
 - [File-Saver](https://www.npmjs.com/package/file-saver) -  the solution to saving files on the client-side
