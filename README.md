@@ -1,7 +1,20 @@
-# Getting Started with Create React App
+# Funayans Personal Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+![img](./portfolio_website_img.png)
+
+## Technologies
+- [React.js](https://reactjs.org/) - A JavaScript library for building user interfaces
+- [React Router(V6)](https://reactjs.org/) -a collection of React components, hooks and utilities that make it easy to build multi-page applications with React.
+- [Material-UI](https://mui.com/material-ui/getting-started/overview/) - A React component library that includes a comprehensive collection of prebuilt components that are ready for use in production right out of the box.
+- [Three.js](https://threejs.org/) - vaScript library and application programming interface used to create and display animated 3D computer graphics in a web browser
+- [Framer Motion](https://www.framer.com/motion/) - An animation library for React
+- [File-Saver](https://www.npmjs.com/package/file-saver) -  the solution to saving files on the client-side
+
+## Important
+Feel free to fork my repo as a template for your own portfolio website but please:
+- dont use my 3D voxel model, there are plenty free ones online or you can create your own
+-  and make sure to give credit
 ## Available Scripts
 
 In the project directory, you can run:
@@ -39,32 +52,3 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
