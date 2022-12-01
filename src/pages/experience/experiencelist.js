@@ -13,7 +13,7 @@ import {
   Docker,
 } from '../../util/photoExport';
 
-const skillsList = [
+export const skillsList = [
   { image: ReactJs, desc: 'React.Js' },
   { image: NodeJs, desc: 'Noder.Js' },
   { image: Linux, desc: 'Linux' },
@@ -24,7 +24,7 @@ const skillsList = [
   { image: CPlus, desc: 'C++' },
   { image: Docker, desc: 'Docker' },
 ];
-const projectsList = [
+export const projectsList = [
   {
     image: Pedalup,
     title: 'Buycycle',
@@ -38,4 +38,3 @@ const projectsList = [
     link: 'https://artportfolioweb.netlify.app',
   },
 ];
-export { skillsList, projectsList };
