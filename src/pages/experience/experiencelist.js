@@ -15,7 +15,7 @@ import {
 
 export const skillsList = [
   { image: ReactJs, desc: 'React.Js' },
-  { image: NodeJs, desc: 'Noder.Js' },
+  { image: NodeJs, desc: 'Node.Js' },
   { image: Linux, desc: 'Linux' },
   { image: Js, desc: 'JavaScript' },
   { image: Java, desc: 'Java' },
