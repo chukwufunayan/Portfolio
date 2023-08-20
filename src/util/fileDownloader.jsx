@@ -1,5 +1,5 @@
 import { saveAs } from 'file-saver';
-import resume from '../resources/docs/programming_resume.pdf';
+import resume from '../resources/programming_resume+final (1).pdf';
 
 function FileDownloader() {
   const dwnldFile = () => {
