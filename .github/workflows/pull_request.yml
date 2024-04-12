@@ -18,6 +18,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: authenticate GCP
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: {secrets.SERVICE_ACCOUNT_KEY}
       - name: build & tag image
         run: |
               docker build -t portfolio -f Dockerfile_Prod_Build .
