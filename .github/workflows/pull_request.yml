@@ -1,0 +1,16 @@
+name: pull-request-wrkflw
+
+on:
+  push:
+    branches:
+      -main
+
+jobs:
+
+  build-docker-image:
+    name: build docker image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: build image
+        run: 'docker build -t portfolio -f Dockerfile_Prod_Build .'
