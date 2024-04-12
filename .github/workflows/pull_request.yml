@@ -25,6 +25,6 @@ jobs:
       - name: build & tag image
         run: docker build -t portfolio -f Dockerfile_Prod_Build .
       - name: tag image
-        run: docker tag portfolio us-east1-docker.pkg.dev/personal-portfolio-363722/portfolio/portfolio:1
+        run: docker tag portfolio us-east1-docker.pkg.dev/personal-portfolio-363722/portfolio:1
       - name: push image to GCP
-        run: docker push us-east1-docker.pkg.dev/personal-portfolio-363722/portfolio/portfolio:1
+        run: docker push us-east1-docker.pkg.dev/personal-portfolio-363722/portfolio:1
