@@ -3,7 +3,7 @@ name: pull-request-wrkflw
 on:
   push:
     branches:
-      -master
+      - master
 
 jobs:
 
