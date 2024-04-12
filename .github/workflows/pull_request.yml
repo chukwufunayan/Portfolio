@@ -18,7 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: build image
-        run: 'docker build -t portfolio -f Dockerfile_Prod_Build .'
+      - name: build & tag image
+        run: '|
+              docker build -t portfolio -f Dockerfile_Prod_Build .
+              docker tag portfolio us-east1-docker.pkg.dev/personal-portfolio-363722/portfolio/portfolio:1'
       - name: push image to GCP
-        run: 'docker tag portfolio us-east1-docker.pkg.dev/personal-portfolio-363722/portfolio/portfolio:1'
+        run: 'docker push us-east1-docker.pkg.dev/personal-portfolio-363722/portfolio/portfolio:1'
