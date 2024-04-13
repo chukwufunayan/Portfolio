@@ -29,6 +29,7 @@ jobs:
               docker tag portfolio us-east1-docker.pkg.dev/personal-portfolio-363722/portfolio/portfolio:2
       - name: push image to GCP
         run: docker push us-east1-docker.pkg.dev/personal-portfolio-363722/portfolio/portfolio:2
+      - run: ls
   list-directory:
     needs:
       - build-docker-image
