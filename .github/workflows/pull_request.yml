@@ -22,9 +22,10 @@ jobs:
         name: authenticate GCP
         with:
           credentials_json: ${{secrets.SERVICE_ACCOUNT_KEY}}
+      - run: gcloud auth configure-docker us-east1-docker.pkg.dev
       - name: build & tag image
-        run: docker build -t portfolio -f Dockerfile_Prod_Build .
-      - name: tag image
-        run: docker tag portfolio us-east1-docker.pkg.dev/personal-portfolio-363722/portfolio:1
+        run: |
+              docker build -t portfolio -f Dockerfile_Prod_Build .
+              docker tag portfolio us-east1-docker.pkg.dev/personal-portfolio-363722/portfolio/portfolio:2
       - name: push image to GCP
-        run: docker push us-east1-docker.pkg.dev/personal-portfolio-363722/portfolio:1
+        run: docker push us-east1-docker.pkg.dev/personal-portfolio-363722/portfolio/portfolio:2
