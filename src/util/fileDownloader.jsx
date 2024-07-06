@@ -1,9 +1,9 @@
 import { saveAs } from 'file-saver';
-import resume from '../resources/programming_resume+final (1).pdf';
+import resume from '../resources/resume.pdf';
 
 function FileDownloader() {
   const dwnldFile = () => {
-    saveAs(resume, 'funayans_resume.pdf');
+    saveAs(resume, 'Chukwufunayan_Ojiagbaje_resume.pdf');
   };
   return { dwnldFile };
 }
