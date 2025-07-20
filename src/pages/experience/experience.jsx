@@ -3,7 +3,6 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import GlassPaper from '../../components/glasspaper/glasspaper';
-// import Card from '../../components/card/card';
 
 // Css Constants
 import { colors, cssMargins } from '../../util/cssConstants';
@@ -21,7 +20,6 @@ import {
 import { skillsList } from './experiencelist';
 
 function experience() {
-  console.log('icons', module);
   return (
     <GlassPaper>
       <TitleHeaders
